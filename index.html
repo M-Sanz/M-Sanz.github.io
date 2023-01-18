@@ -9,6 +9,9 @@
     <!-- Bootstrp Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css" />
 
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- My CSS -->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -43,8 +46,8 @@
     <!-- Jumbotron -->
     <section class="jumbotron text-center color3">
       <img src="img/Ihsan - Pink 2.png" class="rounded-circle img-thumbnail" alt="Ihsan" width="200" />
-      <h1 class="display-4">Mahara Ihsan Kahfi</h1>
-      <p class="lead">Student | Web Developer</p>
+      <h1 class="display-4 mt-2">Mahara Ihsan Kahfi</h1>
+      <p class="lead"></p>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#f5ddef"
@@ -64,10 +67,10 @@
           </div>
         </div>
         <div class="row justify-content-center fs-5 text-center">
-          <div class="col-md-5">
+          <div class="col-md-5" data-aos="fade-right">
             <p>A Final year computer science student with enthusiasm in the field of software development. currently focusing learning on this field as backend developer.</p>
           </div>
-          <div class="col-md-5">
+          <div class="col-md-5" data-aos="fade-left" data-aos-delay="300">
             <p>I spare my time to learn code and playing mobile games. Soon become a software engineer.</p>
           </div>
         </div>
@@ -92,7 +95,7 @@
         </div>
         <div class="row justify-content-evenly">
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-right">
               <img src="img/Portofolio.jpeg" class="card-img-top border border-dark border-opacity-10" alt="Project 2" />
               <div class="card-body">
                 <p class="card-text">This is my first profile website. following tutorial from Web Programming Unpas</p>
@@ -100,7 +103,7 @@
             </div>
           </div>
           <div class="col-md-4 mb-3">
-            <div class="card">
+            <div class="card" data-aos="flip-left">
               <img src="img/IPB - Recruit.jpeg" class="card-img-top border border-dark border-opacity-10" alt="Project 3" />
               <div class="card-body">
                 <p class="card-text">Project of MPPL subject, IPB Recruit is an app for compsci student to register to an organization</p>
@@ -170,6 +173,30 @@
       <p>Created with <i class="bi bi-suit-heart-fill text-dark"></i> by <a href="https://www.instagram.com/maharaihsan/" class="text-dark fw-bold">Mahara Ihsan</a></p>
     </footer>
     <!-- Akhir Footer -->
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        once: true,
+      });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/TextPlugin.min.js"></script>
+    <script>
+      gsap.registerPlugin(TextPlugin);
+      gsap.from(".jumbotron img", {
+        duration: 4,
+        y: -100,
+        opacity: 0,
+        ease: "elastic.out(.6, 0.3)",
+      });
+      gsap.from(".display-4", { duration: 1, x: -70, opacity: 0, ease: "back" });
+      gsap.from(".navbar", { duration: 1, y: "-100%", opacity: 0 });
+
+      gsap.to(".lead", { duration: 3, delay: 1.5, text: "Student | Web Developer" });
+    </script>
 
     <script>
       const scriptURL = "https://script.google.com/macros/s/AKfycbytmLTUQWDOVI0VvxBjwcsQL0U62bTCxamRAYuCDfLcp-DX5WbwkG2SnbFZSYVV9lJ-/exec";

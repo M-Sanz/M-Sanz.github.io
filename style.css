@@ -25,3 +25,7 @@ section {
 .color4 {
   background-color: #f5ddef;
 }
+
+.lead {
+  height: 1em;
+}
